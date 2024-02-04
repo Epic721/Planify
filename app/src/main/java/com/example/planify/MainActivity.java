@@ -16,6 +16,8 @@ import android.widget.Toast;
 
 import com.example.planify.databinding.ActivityMainBinding;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
@@ -69,6 +71,52 @@ private TaskViewModel taskViewModel;
                 }
             }
         }).attachToRecyclerView(binding.RV);
+
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigation);
+        bottomNavigationView.setSelectedItemId(R.id.bottom_tasks);
+        bottomNavigationView.setOnItemSelectedListener(item -> {
+            if(item.getItemId() == R.id.bottom_tasks){
+                return true;
+            }
+            else if(item.getItemId() == R.id.bottom_courses){
+                startActivity(new Intent(getApplicationContext(), ClassesActivity.class));
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                finish();
+                return true;
+            }
+            else if(item.getItemId() == R.id.bottom_assignments){
+                startActivity(new Intent(getApplicationContext(), ClassesActivity.class));
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                finish();
+                return true;
+            }
+            else if(item.getItemId() == R.id.bottom_assignments){
+                startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                finish();
+                return true;
+            }
+            /*switch (item.getItemId()) {
+                case R.id.bottom_tasks:
+                    return true;
+                case R.id.bottom_courses:
+                    startActivity(new Intent(getApplicationContext(), ClassesActivity.class));
+                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                    finish();
+                    return true;
+                case R.id.bottom_settings:
+                    startActivity(new Intent(getApplicationContext(), ClassesActivity.class));
+                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                    finish();
+                    return true;
+                case R.id.bottom_profile:
+                    startActivity(new Intent(getApplicationContext(), ClassesActivity.class));
+                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                    finish();
+                    return true;
+            }*/
+            return false;
+        });
     }
 
     @Override

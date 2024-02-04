@@ -17,7 +17,7 @@ public class SplashAct extends AppCompatActivity {
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                startActivity(new Intent(SplashAct.this, ClassesActivity.class)); //Anonymous object
+                startActivity(new Intent(SplashAct.this, MainActivity.class)); //Anonymous object
                 finish();
             }
         }, 3000); //Delay time for splash effect
