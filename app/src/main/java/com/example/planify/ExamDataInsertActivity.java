@@ -22,10 +22,10 @@ public class ExamDataInsertActivity extends AppCompatActivity {
         if (type.equals("update")) {
             setTitle("Update");
             binding.ExamName.setText(getIntent().getStringExtra("ExamName"));
-            binding.Date.setText(getIntent().getStringExtra("Date"));
-            binding.Time.setText(getIntent().getStringExtra("Time"));
-            binding.Location.setText(getIntent().getStringExtra("Location"));
-            binding.ExtraDetails.setText(getIntent().getStringExtra("ExtraDetails"));
+            binding.ExamDate.setText(getIntent().getStringExtra("Date"));
+            binding.ExamTime.setText(getIntent().getStringExtra("Time"));
+            binding.ExamLocation.setText(getIntent().getStringExtra("Location"));
+            binding.ExamExtraDetails.setText(getIntent().getStringExtra("ExtraDetails"));
 
             int id = getIntent().getIntExtra("id", 0);
             binding.addExam.setText("Update Exam");
@@ -34,10 +34,10 @@ public class ExamDataInsertActivity extends AppCompatActivity {
                 public void onClick(View v) {
                     Intent intent = new Intent();
                     intent.putExtra("ExamName", binding.ExamName.getText().toString());
-                    intent.putExtra("Date", binding.Date.getText().toString());
-                    intent.putExtra("Time", binding.Time.getText().toString());
-                    intent.putExtra("Location", binding.Location.getText().toString());
-                    intent.putExtra("ExtraDetails", binding.ExtraDetails.getText().toString());
+                    intent.putExtra("Date", binding.ExamDate.getText().toString());
+                    intent.putExtra("Time", binding.ExamTime.getText().toString());
+                    intent.putExtra("Location", binding.ExamLocation.getText().toString());
+                    intent.putExtra("ExtraDetails", binding.ExamExtraDetails.getText().toString());
                     intent.putExtra("id", id);
                     setResult(RESULT_OK, intent);
                     finish();
@@ -52,10 +52,10 @@ public class ExamDataInsertActivity extends AppCompatActivity {
                 public void onClick(View v) {
                     Intent intent = new Intent();
                     intent.putExtra("ExamName", binding.ExamName.getText().toString());
-                    intent.putExtra("Date", binding.Date.getText().toString());
-                    intent.putExtra("Time", binding.Time.getText().toString());
-                    intent.putExtra("Location", binding.Location.getText().toString());
-                    intent.putExtra("ExtraDetails", binding.ExtraDetails.getText().toString());
+                    intent.putExtra("Date", binding.ExamDate.getText().toString());
+                    intent.putExtra("Time", binding.ExamTime.getText().toString());
+                    intent.putExtra("Location", binding.ExamLocation.getText().toString());
+                    intent.putExtra("ExtraDetails", binding.ExamExtraDetails.getText().toString());
                     setResult(RESULT_OK, intent);
                     finish();
                 }

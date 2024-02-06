@@ -6,86 +6,14 @@
     android:layout_height="match_parent"
     tools:context=".CourseDataInsertActivity">
 
-    <Button
-        android:id="@+id/addExam"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
-        android:text="Button"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Time"
-        app:layout_constraintVertical_bias="0.547" />
-
     <EditText
-        android:id="@+id/ExamName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
-        android:ems="10"
-        android:hint="Course Name"
-        android:inputType="text"
-        android:minHeight="48dp"
-        app:layout_constraintBottom_toTopOf="@+id/Date"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/Date"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
-        android:ems="10"
-        android:hint="Time (Date Optional)"
-        android:inputType="text"
-        android:minHeight="48dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ExamName" />
-
-    <EditText
-        android:id="@+id/Time"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
-        android:ems="10"
-        android:hint="Instructor"
-        android:inputType="text"
-        android:minHeight="48dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Date" />
-
-    <EditText
-        android:id="@+id/Location"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:ems="10"
-        android:hint="Day (Recurring)"
-        android:inputType="text"
-        app:layout_constraintBottom_toTopOf="@+id/ExtraDetails"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Time"
-        app:layout_constraintVertical_bias="0.205" />
-
-    <EditText
-        android:id="@+id/ExtraDetails"
+        android:id="@+id/CourseTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="Location and Room"
+        android:hint="Course Title"
         android:inputType="text"
-        app:layout_constraintBottom_toTopOf="@+id/addExam"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Time"
-        app:layout_constraintVertical_bias="0.651" />
+        android:textSize="20sp"
+        tools:layout_editor_absoluteX="102dp"
+        tools:layout_editor_absoluteY="66dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
