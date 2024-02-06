@@ -11,15 +11,12 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
 import com.example.planify.databinding.ActivityClassesBinding;
-import com.example.planify.databinding.ActivityMainBinding;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-import java.util.Arrays;
 import java.util.List;
 
 public class ClassesActivity extends AppCompatActivity {
@@ -64,7 +61,7 @@ public class ClassesActivity extends AppCompatActivity {
 //                Intent intent = new Intent(ClassesActivity.this, CourseDataInsertActivity.class);
 //                intent.putExtra("type", "addMode");
 //                startActivityForResult(intent, 1);
-                Globals.viewType = 1;
+                Globals.courseViewType = 1;
                 courseViewModel.getAllCourses().observe(ClassesActivity.this, new Observer<List<Course>>() {
                     @Override
                     public void onChanged(List<Course> courses) {
@@ -93,7 +90,7 @@ public class ClassesActivity extends AppCompatActivity {
 //                Intent intent = new Intent(ClassesActivity.this, CourseDataInsertActivity.class);
 //                intent.putExtra("type", "addMode");
 //                startActivityForResult(intent, 1);
-                Globals.viewType = 0;
+                Globals.courseViewType = 0;
                 courseViewModel.getAllCourses().observe(ClassesActivity.this, new Observer<List<Course>>() {
                     @Override
                     public void onChanged(List<Course> courses) {
@@ -112,7 +109,7 @@ public class ClassesActivity extends AppCompatActivity {
 //                Intent intent = new Intent(ClassesActivity.this, CourseDataInsertActivity.class);
 //                intent.putExtra("type", "addMode");
 //                startActivityForResult(intent, 1);
-                Globals.viewType = 2;
+                Globals.courseViewType = 2;
                 courseViewModel.getAllCourses().observe(ClassesActivity.this, new Observer<List<Course>>() {
                     @Override
                     public void onChanged(List<Course> courses) {
@@ -141,6 +138,8 @@ public class ClassesActivity extends AppCompatActivity {
                     intent.putExtra("title", courseAdapter.getCourse(viewHolder.getAdapterPosition()).getTitle());
                     intent.putExtra("time", courseAdapter.getCourse(viewHolder.getAdapterPosition()).getTime());
                     intent.putExtra("instructor", courseAdapter.getCourse(viewHolder.getAdapterPosition()).getInstructor());
+                    intent.putExtra("day", courseAdapter.getCourse(viewHolder.getAdapterPosition()).getDayRepeat());
+                    intent.putExtra("location", courseAdapter.getCourse(viewHolder.getAdapterPosition()).getLocationRmNum());
                     intent.putExtra("id", courseAdapter.getCourse(viewHolder.getAdapterPosition()).getId());
                     startActivityForResult(intent, 2);
                 }
@@ -201,7 +200,9 @@ public class ClassesActivity extends AppCompatActivity {
             String title = data.getStringExtra("title");
             String time = data.getStringExtra("time");
             String instructor = data.getStringExtra("instructor");
-            Course course = new Course(title, time, instructor);
+            String day = data.getStringExtra("day");
+            String location = data.getStringExtra("location");
+            Course course = new Course(title, time, instructor, day, location);
             courseViewModel.insert(course);
             Toast.makeText(this, "Course added!", Toast.LENGTH_SHORT).show();
         }
@@ -209,7 +210,9 @@ public class ClassesActivity extends AppCompatActivity {
             String title = data.getStringExtra("title");
             String time = data.getStringExtra("time");
             String instructor = data.getStringExtra("instructor");
-            Course course = new Course(title, time, instructor);
+            String day = data.getStringExtra("day");
+            String location = data.getStringExtra("location");
+            Course course = new Course(title, time, instructor, day, location);
             course.setId(data.getIntExtra("id", 0));
             courseViewModel.update(course);
             Toast.makeText(this, "Course updated!", Toast.LENGTH_SHORT).show();

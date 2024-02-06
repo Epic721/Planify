@@ -4,10 +4,6 @@ import android.app.Application;
 import android.os.AsyncTask;
 
 import androidx.lifecycle.LiveData;
-import androidx.room.Delete;
-import androidx.room.Insert;
-import androidx.room.Query;
-import androidx.room.Update;
 
 import java.util.List;
 
@@ -25,9 +21,9 @@ public class CourseRepo {
     public void deleteData(Course course) {new DeleteCourse(courseDao).execute(course);}
     public LiveData<List<Course>> getAllData() {
 //        Globals.viewType = 1; //Check --> Manually overriding works
-        if (Globals.viewType == 0) {
+        if (Globals.courseViewType == 0) {
             courseList = courseDao.getAllData();
-        } else if (Globals.viewType == 1) {
+        } else if (Globals.courseViewType == 1) {
             courseList = courseDao.getTitleData();
         } else {
             courseList = courseDao.getTimeData();

@@ -22,6 +22,8 @@ public class CourseDataInsertActivity extends AppCompatActivity {
             binding.Title.setText(getIntent().getStringExtra("title"));
             binding.Time.setText(getIntent().getStringExtra("time"));
             binding.Instructor.setText(getIntent().getStringExtra("instructor"));
+            binding.Day.setText(getIntent().getStringExtra("day"));
+            binding.Location.setText(getIntent().getStringExtra("location"));
             int id = getIntent().getIntExtra("id", 0);
             binding.addCourse.setText("Update Course");
             binding.addCourse.setOnClickListener(new View.OnClickListener() {
@@ -31,6 +33,8 @@ public class CourseDataInsertActivity extends AppCompatActivity {
                     intent.putExtra("title", binding.Title.getText().toString());
                     intent.putExtra("time", binding.Time.getText().toString());
                     intent.putExtra("instructor", binding.Instructor.getText().toString());
+                    intent.putExtra("day", binding.Day.getText().toString());
+                    intent.putExtra("location", binding.Location.getText().toString());
                     intent.putExtra("id", id);
                     setResult(RESULT_OK, intent);
                     finish();
@@ -47,6 +51,8 @@ public class CourseDataInsertActivity extends AppCompatActivity {
                     intent.putExtra("title", binding.Title.getText().toString());
                     intent.putExtra("time", binding.Time.getText().toString());
                     intent.putExtra("instructor", binding.Instructor.getText().toString());
+                    intent.putExtra("day", binding.Day.getText().toString());
+                    intent.putExtra("location", binding.Location.getText().toString());
                     setResult(RESULT_OK, intent);
                     finish();
                 }

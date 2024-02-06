@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.planify.databinding.ClassesRvBinding;
 
+
 public class RVCourseAdapter extends ListAdapter<Course, RVCourseAdapter.ViewHolder> {
     public RVCourseAdapter() {
         super(CALLBACK);
@@ -43,6 +44,8 @@ public class RVCourseAdapter extends ListAdapter<Course, RVCourseAdapter.ViewHol
         holder1.binding.nameRv.setText(course.getTitle());
         holder1.binding.timeRV.setText(course.getTime());
         holder1.binding.instructorRV.setText(course.getInstructor());
+        holder1.binding.dayRV.setText(course.getDayRepeat());
+        holder1.binding.locationRV.setText(course.getLocationRmNum());
 //        holder1.binding.titleRV.setText(course.getTitle());
 //        holder1.binding.timeRV.setText(course.getTime());
 //        holder1.binding.instructorRV.setText(course.getInstructor());
