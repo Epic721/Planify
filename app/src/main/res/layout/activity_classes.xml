@@ -32,7 +32,7 @@
         app:layout_constraintHorizontal_bias="0.952"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.975" />
+        app:layout_constraintVertical_bias="0.80" />
 
     <Button
         android:id="@+id/defaultOrder"
@@ -44,7 +44,7 @@
         app:layout_constraintHorizontal_bias="0.484"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.975" />
+        app:layout_constraintVertical_bias="0.80" />
 
     <Button
         android:id="@+id/sortByTitle"
@@ -55,7 +55,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/floatingSHOW"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.975" />
+        app:layout_constraintVertical_bias="0.80" />
 
     <Button
         android:id="@+id/sortByTime"
@@ -67,7 +67,7 @@
         app:layout_constraintHorizontal_bias="0.55"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/RVClasses"
-        app:layout_constraintVertical_bias="0.97" />
+        app:layout_constraintVertical_bias="0.975" />
 
     <RelativeLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
